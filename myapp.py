@@ -235,8 +235,9 @@ def main():
         daily_consumption_data = get_consumption_data(daily_consumption_data)
         #response = requests.get('http://localhost:5000/daily_consumption_data')
         #data = response.json()
+        data=daily_consumption_data.json
                     
-        visualize_consumption(daily_consumption_data)
+        visualize_consumption(data)
 
               
     elif choice == "Bilan Conso Energies(Elec/Gaz/Eau)":
