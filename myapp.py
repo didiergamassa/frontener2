@@ -232,10 +232,11 @@ def main():
     elif choice == "Visu Conso Energies(Elec/Gaz/Eau)":
         st.title('Consumption Analysis')
         
-        response = requests.get('http://localhost:5000/daily_consumption_data')
-        data = response.json()
+        daily_consumption_data = get_consumption_data(daily_consumption_data)
+        #response = requests.get('http://localhost:5000/daily_consumption_data')
+        #data = response.json()
                     
-        visualize_consumption(data)
+        visualize_consumption(daily_consumption_data)
 
               
     elif choice == "Bilan Conso Energies(Elec/Gaz/Eau)":
