@@ -9,7 +9,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 # Replace with your Heroku app URL
 
 # Adresse du backend Flask
-BACKEND_URL = 'https://backend.herokuapp.com'
+BACKEND_URL = 'http://localhost:5000'
 
 # Récupérer les données de consommation depuis le backend
 def get_consumption_data(resource):
@@ -232,10 +232,9 @@ def main():
     elif choice == "Visu Conso Energies(Elec/Gaz/Eau)":
         st.title('Consumption Analysis')
         
-        response = requests.get('https://backend.herokuapp.com'/consumption_data')
-        consumption_data = response.json()
-        data=consumption_data
-            
+        response = requests.get('http://localhost:5000/daily_consumption_data')
+        data = response.json()
+                    
         visualize_consumption(data)
 
               
